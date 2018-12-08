@@ -4,11 +4,15 @@ def call(body) {
     body.delegate = pipelineParams
     body()
     
-                     mvnHome = tool name: 'localMaven', type: 'maven'
 
     
     pipeline {
         agent any
+     tools
+     {
+      
+      maven 'localMaven'
+     }
         stages {
             stage('checkout git') {
                 steps {
