@@ -13,15 +13,15 @@ def call(body) {
                 steps {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
-                       mvnHome = tool name: 'localMaven', type: 'maven'
+                 //mvnHome = tool name: 'localMaven', type: 'maven'
 
                 }
             }
 
             stage('build') {
                 steps {
-                    //sh 'mvn clean package -DskipTests=true'
-                                sh "'${mvnHome}/bin/mvn' clean package"
+                    sh 'mvn clean package package'
+                               // sh "'${mvnHome}/bin/mvn' clean package"
 
                     echo "build"
                 }
