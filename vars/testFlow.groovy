@@ -4,7 +4,8 @@ def call(body) {
     body.delegate = pipelineParams
     body()
     
-    
+                     mvnHome = tool name: 'localMaven', type: 'maven'
+
     
     pipeline {
         agent any
@@ -13,7 +14,6 @@ def call(body) {
                 steps {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
-                 //mvnHome = tool name: 'localMaven', type: 'maven'
 
                 }
             }
