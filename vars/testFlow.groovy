@@ -31,9 +31,9 @@ def call(body) {
                 }
             }
 
-            stage ('test') {
+            stage ('Archive') {
                 steps {
-                    echo "test started"
+           archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
                 }
             }
 
