@@ -37,21 +37,17 @@ def call(body) {
                 }
             }
 
-            stage('deploy developmentServer'){
-                steps {
-                    echo "dev started"
-                }
-            }
+            
 
             stage('deploy staging'){
                 steps {
-                    echo "stag started"
+build 'deploy-to-staging'
                 }
             }
 
             stage('deploy production'){
                 steps {
-                    echo "prod started"
+build 'deploy-to-production'
                 }
             }
         }
