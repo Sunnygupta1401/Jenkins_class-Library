@@ -12,6 +12,7 @@ def call(body) {
             stage('checkout git') {
                 steps {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
+                 echo pipelineParams.check
                 }
             }
 
