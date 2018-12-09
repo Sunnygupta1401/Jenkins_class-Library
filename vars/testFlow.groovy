@@ -4,7 +4,6 @@ def call(body) {
     body.delegate = pipelineParams
     body()
     
-def conf
     
     pipeline {
         agent any
