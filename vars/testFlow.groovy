@@ -20,7 +20,7 @@ def call(body) {
                  echo pipelineParams.check
                  
                 evaluate(readFile("${env.WORKSPACE}/prop.groovy"))
-                // echo "${personDetails.firstName}"
+                 echo personDetails.firstName
 
 
                 }
