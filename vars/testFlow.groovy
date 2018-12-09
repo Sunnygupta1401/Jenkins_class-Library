@@ -50,8 +50,10 @@ def call(body) {
 
             stage('deploy production'){
                 steps {
-build 'deploy-to-production'               
+//build 'deploy-to-production'               
                  
+            sh 'cp **/target/*.war     /Users/sunnygupta/Documents/apache-tomcat-8.5.20-production.20/webapps'
+
                  
                 }
             }
