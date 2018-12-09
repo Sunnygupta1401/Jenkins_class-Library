@@ -18,6 +18,8 @@ def call(body) {
                 steps {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
+                 
+                 echo "pipelineParams.personDetails"
 
                 }
             }
