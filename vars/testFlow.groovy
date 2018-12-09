@@ -19,7 +19,7 @@ def call(body) {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
                  
-                echo "evaluate(readFile("${env.WORKSPACE}/prop.groovy"))"
+                evaluate(readFile("${env.WORKSPACE}/prop.groovy"))
                 // echo "${personDetails.firstName}"
 
 
