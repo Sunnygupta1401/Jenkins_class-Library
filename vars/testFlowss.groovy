@@ -15,7 +15,7 @@ def call(body) {
                  echo pipelineParams.check
                        mvnHome = tool name: 'localMaven', type: 'maven'
 
-               //readFile("${env.WORKSPACE}/prop.groovy")
+               readFile("${env.WORKSPACE}/prop.groovy")
                 // echo "${pipelineParams.personDetails.firstName}"
             }
             stage('build') {
