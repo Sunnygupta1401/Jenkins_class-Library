@@ -18,7 +18,7 @@ def call(body) {
              if (fileExists("${env.WORKSPACE}/prop.groovy"))
                 {
                  echo "yes"
-                 bb = readFile("${env.WORKSPACE}/prop.groovy")
+                 bb = evaluate(readFile("${env.WORKSPACE}/prop.groovy"))
                echo bb                 
 
                 }
