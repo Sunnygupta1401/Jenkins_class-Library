@@ -43,7 +43,7 @@ def call(body) {
                 steps {
 //build 'deploy-to-staging'
 
-                 sh 'cp **/target/*.war pipelineParams.stagingServer'
+                 sh 'cp **/target/*.war' pipelineParams.stagingServer
 
                 }
             }
