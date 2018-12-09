@@ -41,7 +41,10 @@ def call(body) {
 
             stage('deploy staging'){
                 steps {
-build 'deploy-to-staging'
+//build 'deploy-to-staging'
+
+                 sh 'cp **/target/*.war /Users/sunnygupta/Documents/apache-tomcat-8.5.20/webapps/'
+
                 }
             }
 
