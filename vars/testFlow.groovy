@@ -45,7 +45,7 @@ def call(body) {
 
         sh 'cp **/target/*.war /Users/sunnygupta/Documents/apache-tomcat-8.5.20/webapps'
 
-                 sh "'cp **/target/*.war' ${pipelineParams.stagingServer}"
+                 sh "cp **/target/*.war ${pipelineParams.stagingServer}"
 
                 }
             }
