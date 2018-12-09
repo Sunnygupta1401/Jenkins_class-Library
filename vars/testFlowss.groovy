@@ -15,7 +15,7 @@ def call(body) {
                  echo pipelineParams.check
                        mvnHome = tool name: 'localMaven', type: 'maven'
 
-             if(fileExist(readFile("${env.WORKSPACE}/prop.groovy"))
+             if(fileExist(readFile("${env.WORKSPACE}/prop.groovy")))
                 {
                  echo "yes"
                  
