@@ -20,7 +20,7 @@ def call(body) {
                  echo pipelineParams.check
                  
                  //echo "${pipelineParams.personDetails.firstName}"
-                 evaluate(new File("./prop.groovy"))
+                 evaluate(new File("prop.groovy"))
 
 
                 }
