@@ -4,7 +4,7 @@ def call(body) {
     body.delegate = pipelineParams
     body()
     
-
+def conf
     
     pipeline {
         agent any
@@ -19,8 +19,9 @@ def call(body) {
                     git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
                  
-                evaluate(readFile("${env.WORKSPACE}/prop.groovy"))
-                 echo personDetails.firstName
+               conf =  readFile("${env.WORKSPACE}/prop.groovy")
+                // echo personDetails.firstName
+                 echo conf
 
 
                 }
