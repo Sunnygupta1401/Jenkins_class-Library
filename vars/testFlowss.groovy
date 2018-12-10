@@ -25,7 +25,7 @@ props.load(propsFile.newDataInputStream())
                  
                    
 test = props.getProperty('stagingServer')
-                 echo test
+                 echo props.getProperty('a.b')
                     
                    
                 }
