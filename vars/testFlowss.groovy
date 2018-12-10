@@ -8,7 +8,8 @@ def call(body) {
    def mvnHome
    def bb
    def GIT_BRANCH
-   
+   Properties props = new Properties()
+
             stage('Preparation') {
             git branch: pipelineParams.branch, url: pipelineParams.scmUrl
                  echo pipelineParams.check
@@ -17,7 +18,6 @@ def call(body) {
              if (fileExists("${env.WORKSPACE}/jenkins.properties"))
                 {
                  echo "yes"
-                      Properties props = new Properties()
           File propsFile = new File("${env.WORKSPACE}/jenkins.properties")
 
 props.load(propsFile.newDataInputStream())
