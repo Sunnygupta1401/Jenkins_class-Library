@@ -20,16 +20,14 @@ def call(body) {
                  echo "yes"
           File propsFile = new File("${env.WORKSPACE}/jenkins.properties")
 
-//props.load(propsFile.newDataInputStream())
-                   propsFile.withReader { r ->
-        /* Loading java.util.Properties as defaults makes empty Properties object */
-        props.load(r)
+props.load(propsFile.newDataInputStream())
+                   
                  
                    
 test = props.getProperty('stagingServer')
                  echo test
                     
-                   }
+                   
                 }
                 // echo "${pipelineParams.personDetails.firstName}"
             }
