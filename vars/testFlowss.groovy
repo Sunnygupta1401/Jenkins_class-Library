@@ -4,7 +4,6 @@ def call(body) {
     body.delegate = pipelineParams
     body()
     
-    
    node {
    def mvnHome
    def bb
@@ -18,8 +17,13 @@ def call(body) {
              if (fileExists("${env.WORKSPACE}/jenkins.properties"))
                 {
                  echo "yes"
-                              
+                      Properties props = new Properties()
+          File propsFile = new File("${env.WORKSPACE}/jenkins.properties")
 
+props.load(propsFile.newDataInputStream())
+
+test = props.getProperty('stagingServer')
+                 echo test
                 }
                 // echo "${pipelineParams.personDetails.firstName}"
             }
