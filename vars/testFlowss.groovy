@@ -25,9 +25,11 @@ def call(body) {
         /* Loading java.util.Properties as defaults makes empty Properties object */
         props.load(r)
                  
-                   }
+                   
 test = props.getProperty('stagingServer')
                  echo test
+                    
+                   }
                 }
                 // echo "${pipelineParams.personDetails.firstName}"
             }
