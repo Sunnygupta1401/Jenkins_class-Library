@@ -15,11 +15,10 @@ def call(body) {
                  echo pipelineParams.check
                        mvnHome = tool name: 'localMaven', type: 'maven'
 
-             if (fileExists("${env.WORKSPACE}/prop.groovy"))
+             if (fileExists("${env.WORKSPACE}/jenkins.properties"))
                 {
                  echo "yes"
-                 bb = evaluate(readFile("${env.WORKSPACE}/prop.groovy"))
-               echo bb                 
+                              
 
                 }
                 // echo "${pipelineParams.personDetails.firstName}"
