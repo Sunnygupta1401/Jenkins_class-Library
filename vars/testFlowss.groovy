@@ -20,8 +20,12 @@ def call(body) {
                  echo "yes"
           File propsFile = new File("${env.WORKSPACE}/jenkins.properties")
 
-props.load(propsFile.newDataInputStream())
-
+//props.load(propsFile.newDataInputStream())
+                   propsFile.withReader { r ->
+        /* Loading java.util.Properties as defaults makes empty Properties object */
+        props.load(r)
+                 
+                   }
 test = props.getProperty('stagingServer')
                  echo test
                 }
